@@ -14,7 +14,12 @@
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
-#
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
